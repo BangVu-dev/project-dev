@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" type="text/css"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap-extended.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/fonts/simple-line-icons/style.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/colors.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/adminPage.css">
+    <script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
+</head>
+
+<body>
+		
+    <div class="abc">
+      <a href="/admin-page" style="
+    font-size: 14px;
+"><i class="fas fa-arrow-left"></i> Back</a>
+    </div>
+
+    <div class="grey-bg container-fluid">
+        <section id="minimal-statistics">
+            <div class="row">
+                <div class="col-12 mt-3 mb-1">                    
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-body">
+                                <div class="media d-flex">
+                                    <div class="align-self-center">
+                                        <i class="fas fa-shopping-basket primary font-large-2 float-left"></i>
+                                    </div>
+
+                                    <div class="media-body text-right">
+
+                                        <h3>{{arrFilter.length}}</h3>
+                                        <span>Tổng đơn hàng</span>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-body">
+                                <div class="media d-flex">
+                                    <div class="align-self-center">
+                                        <i class="fas fa-box-open warning font-large-2 float-left"></i>
+                                    </div>
+                                    <div class="media-body text-right">
+                                        <h3 id="tong"></h3>
+                                        <span>Tổng số lượng bán ra</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-body">
+                                <div class="media d-flex">
+                                    <div class="align-self-center">
+                                        <i class="fas fa-money-bill-wave success font-large-2 float-left"></i>
+                                    </div>
+                                    <div class="media-body text-right">
+                                        <h3 id="tien-quy"></h3>
+                                        <span>Tiền quỹ từ thiện</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-body">
+                                <div class="media d-flex">
+                                    <div class="align-self-center">
+                                        <i class="fas fa-money-check-alt danger font-large-2 float-left"></i>
+                                    </div>
+                                    <div class="media-body text-right">
+                                        <h3 id="doanh-thu"></h3>
+                                        <span>Tổng doanh thu</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                     <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-body">
+                                <div class="media d-flex">
+                                    <div class="align-self-center">
+                                        <i class="fas fa-money-check-alt primary font-large-2 float-left"></i>
+                                    </div>
+
+                                    <div class="media-body text-right">
+
+                                        <h3 id="doanh-thu-thuc"></h3>
+                                        <span>Doanh thu thực</span>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-body">
+                                <div class="media d-flex">
+                                    <div class="align-self-center">
+                                        <i class="fas fa-star-of-life primary font-large-2 float-left"></i>
+                                    </div>
+
+                                    <div class="media-body text-right">
+
+                                        <h3 id="chua-xac-nhan"></h3>
+                                        <span>Tổng đơn chưa xác nhận</span>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+
+        </section>
+    </div>
+    
+    <div class="row">
+        <div class="col-12 mt-1 mb-1">
+            <h4 class="text-uppercase">Thông tin đơn hàng:</h4>
+        </div>
+    </div>
+   
+  
+
+    <div class="sticky-table">
+        <div class="containerInput">
+            <label for="labelSearchName">Tìm kiếm theo tên khách hàng</label>
+      <input class="inputNameKh" type="text" name="tenKh" placeholder="Tên khách hàng ...">
+      <button class="btnName">Tìm kiếm</button>
+       <button class="btnNameEX " onclick="ExportToExcel('xlsx')">Xuất Excel</button>
+        </div>
+        <div class="headerTable">
+  
+     
+        <div class="dateContainer">
+           <h1> <i class="far fa-clock success font-large-1"></i> Lọc thông tin bảng theo ngày</h1>
+           <form action="/admin-page/filter" name="loc-theo-ngay" method="POST">
+                <div class="date">            
+                    <label for="dateofbirth">Từ</label>
+                    <input type="date" name="startDay" id="ngay-bat-dau">
+                    <label for="dateofbirth">Đến</label>
+                    <input type="date" name="endDate" id="ngay-ket-thuc" class="date11"> 
+                    <button class="btnDate" id="btn-loc-theo-ngay">Tìm kiếm</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="filterContainer">
+           <h1><i class="fas fa-filter warning font-large-1"></i>Lọc thông tin theo mục</h1>
+        <div class="date">   
+
+        <button class="btnFilter ">Đã giao</button>
+        <button class="btnFilter ">Chưa giao</button>
+        <button class="btnFilter ">Đã xác nhận</button>
+        <button class="btnFilter ">Chưa xác nhận</button>
+        </div>
+  
+    </div>
+       </div>
+       <table  id="tbl_exporttable_to_xls">
+            <thead>
+                <tr>
+                    <th>Tên khách hàng</th>
+                    <th>Giới tính</th>
+                    <th>Email</th>
+                    <th>Số điện thoại</th>
+                    <th>Địa chỉ</th>
+                    <th>Ngày đặt</th>
+                    <th>Số lượng</th>
+                    <th>Thanh toán</th>                    
+                    <th>Trạng thái</th>
+                    <th>Tình trạng</th>                    
+
+                </tr>
+            </thead>
+            {{#each arrFilter}}
+            <tbody>
+                <tr>
+                    <td>{{this.name}}</td>
+                    <td>{{this.gender}}</td>
+                    <td>{{this.email}}</td>
+                    <td>{{this.phoneNumber}}</td>
+                    <td>{{this.address}}</td>
+                                       <td id="datez"style="
+    text-transform: capitalize;
+">{{moment this.createdAt lang="Vi" format=" DD MMMM YYYY HH:mm:ss"}}</td>
+                    <td>{{this.quantity}}</td>
+                    <td>{{this.payMethod}}</td>                             
+                     <td>
+                        <form class= "btn1"name="update-don-hang-form" method="POST">
+                            {{#if status}}
+                            <button  class= "active" id="btn-xac-nhan" data-id="{{this._id}}" data-status="{{this.status}}" disabled>Đã xác
+                                nhận</button>
+                            {{else}}
+                            <button class= "UnActive" id="btn-xac-nhan" data-id="{{this._id}}" data-status="{{this.status}}">Chưa xác
+                                nhận</button>
+                            {{/if}}
+                        </form>
+                    </td>
+                    <td>
+                        <form class= "GruopButton" name="update-dat-hang-form" method="POST">
+                            {{#if condition}}
+                            <button  class= "active2" id="btn-xac-nhan-dat-hang" data-id="{{this._id}}" data-status="{{this.condition}}" disabled>Đã giao hàng</button>                                 
+                            {{else}}
+                            <button  class= "UnActive2" id="btn-xac-nhan-dat-hang" data-id="{{this._id}}" data-status="{{this.condition}}">Chưa giao hàng</button> 
+                            {{/if}}
+                        </form>
+                    </td>
+
+                </tr>
+            </tbody>
+            {{/each}}
+        </table>
+    
+    </div>
+ 
+</body>
+<script>
+
+  function makeid(length) {
+    var result           = '';
+    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var charactersLength = characters.length;
+    for ( var i = 0; i < length; i++ ) {
+      result += characters.charAt(Math.floor(Math.random() * 
+ charactersLength));
+   }
+   return result;
+}
+ function ExportToExcel(type, fn, dl) {
+            var elt = document.getElementById('tbl_exporttable_to_xls');
+            var wb = XLSX.utils.table_to_book(elt, { sheet: "sheet1" });
+            return dl ?
+                XLSX.write(wb, { bookType: type, bookSST: true, type: 'base64' }) :
+                XLSX.writeFile(wb, fn || (`ExcelWAVEEX ${makeid(1)}.`+ (type || 'xlsx')));
+        }
+   let tong = 29;
+   let gia = 998000;
+   let tienTuThien = 20000;
+    let check = 0;
+   let checked =0;
+{{#each arrFilter
+}}
+       {{#if status}}
+        check++
+        {{else}}
+         checked++                  
+         {{/if}}                                                           
+    console.log("check" + check)
+    {{/each}}
+document.querySelector('#chua-xac-nhan').innerHTML = checked;
+    {{#each arrFilter}}
+        {{#if condition}}
+            tong += {{this.quantity}}
+        {{/if}}
+    {{/each}}
+
+  
+    document.querySelector('#tong').innerHTML = tong;
+    document.querySelector('#tien-quy').innerHTML = `${(tong * tienTuThien).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")} đ`;
+    document.querySelector('#doanh-thu').innerHTML = `${(tong * gia).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")} đ`;
+    document.querySelector('#doanh-thu-thuc').innerHTML = `${((tong * gia)-(tong * 20000)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}đ`
+
+    document.addEventListener('DOMContentLoaded', function () {
+        let confirmBtns = document.querySelectorAll('#btn-xac-nhan');
+        let btnUpdateDonHang = document.forms['update-don-hang-form'];
+        let btnUpdateDatHang = document.forms['update-dat-hang-form'];
+        let confirmBtnDatHangs = document.querySelectorAll('#btn-xac-nhan-dat-hang');
+        let btnLocTheoNgay = document.forms['loc-theo-ngay'];
+        let btnLoc = document.querySelector('#btn-loc-theo-ngay');
+        let dateNgayBatDau = document.querySelector('#ngay-bat-dau');
+        let dateNgayKetThuc = document.querySelector('#ngay-ket-thuc'); 
+
+        Array.from(confirmBtns).forEach(confirmBtn => {
+            confirmBtn.onclick = function (e) {
+                e.preventDefault();
+                btnUpdateDonHang.action = '/admin-page/' + $(this).data("id") + '?_method=PUT';
+                btnUpdateDonHang.submit();
+            }
+        })
+
+        Array.from(confirmBtnDatHangs).forEach(confirmBtnDatHang => {    
+            confirmBtnDatHang.onclick = function (e) {
+                e.preventDefault();                                              
+                btnUpdateDatHang.action = '/admin-page/delivery/' + $(this).data("id") + '?_method=PUT';                                                          
+                btnUpdateDatHang.submit();             
+            }            
+        })
+
+        btnLoc.onclick = function (e) {         
+            btnUpdateDatHang.action = '/admin-page/filter';
+            btnLocTheoNgay.submit();
+        }
+    })
+</script>
+
+</html>

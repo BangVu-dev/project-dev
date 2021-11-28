@@ -15,11 +15,23 @@
   "author": "bangvu",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "connect-mongo": "^3.2.0",
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
     "express": "^4.17.1",
     "express-handlebars": "^5.3.3",
+    "express-session": "^1.17.2",
+    "handlebars.moment": "^1.0.4",
+    "local-storage-parser": "^1.1.0",
     "method-override": "^3.0.0",
+    "moment": "^2.29.1",
     "mongoose": "^6.0.5",
-    "mongoose-slug-generator": "^1.0.4"
+    "mongoose-delete": "^0.5.4",
+    "mongoose-slug-generator": "^1.0.4",
+    "node-localstorage": "^2.2.1",
+    "nodemailer": "^6.7.1",
+    "store": "^2.0.12"
   },
   "devDependencies": {
     "husky": "^7.0.2",

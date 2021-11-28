@@ -1,0 +1,27 @@
+<div class="mt-4">
+    <div class="main">
+        <form action="" name="add-info-form" method="POST">
+            <p class="demo"></p>
+            <label for="ten">Tên đăng nhập:</label>
+            <input type="text" name="name">
+            <br>
+            <label for="gioi-tinh">Mật khẩu:</label>
+            <input type="password" name="password">           
+            <br>
+            <button id="btn-add-info-modal" type="button">Đăng nhập</button>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var addForm = document.forms['add-info-form'];            
+            var btnAddCourse = document.getElementById('btn-add-info-modal');
+            var demo = document.querySelector('.demo');              
+
+            btnAddCourse.onclick = function () {
+                addForm.action = '/admin';
+                addForm.submit();                                                
+            }
+        });
+    </script>
+</div>
