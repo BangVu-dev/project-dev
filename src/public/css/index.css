@@ -50,7 +50,7 @@ body {
 .typewriter p {
   color: white;
   border-right: .05em solid #464545;
-  font-size: 30px;
+  font-size: 24px;
   font-weight: 500;
   width: 0;
   max-width: max-content;
@@ -62,7 +62,7 @@ body {
 .typing-erase {
     padding: 5px;
   animation: 
-    1.5s typing-erase 1s steps(50, end) infinite,
+    3.0s typing-erase 1s steps(50, end) infinite,
     blink-caret .1s step-end infinite;
 }
 
@@ -881,7 +881,7 @@ input[type="submit"]:hover {
   /* Styles */
 
   .button-auto {
-    width: 50%;
+    width: 80%;
     margin: auto;
   }
 
