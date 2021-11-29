@@ -33,7 +33,7 @@
         <div class="container">
             <h1 class="title-container">Đăng ký đặt hàng ngay!</h1>
             <div class="form_dat_hang">
-                <form id="form-validate" name="add-info-form" method="POST">
+                <form id="form-validate" name="add-info-form" method="POST" onsubmit="sendMail()">
                     <div class="form-control form-group">
                         <input type="text" id="ho_ten" placeholder="Họ tên" name="name" required/>
                         <span class="form-message"></span>
@@ -80,7 +80,7 @@
                         </div>
                         <span class="form-message"></span>
                     </div>
-                    <input type="submit" onclick="sendMail()" value="Đặt hàng" />
+                    <input type="submit" value="Đặt hàng" />
                 </form>
             </div>
         </div>
@@ -704,8 +704,8 @@
             Host : "smtp.gmail.com",
             Username : "tunguyen2022002@gmail.com",
             Password : "errqmrdpsydijkxs",
-            To : 'bangvvpk01973@fpt.edu.vn',
-            From : "bangvu16102001@gmail.com",
+            To : "bangvvpk01973@fpt.edu.vn",
+            From : "vida-waveex@gmail.com",
             Subject : "Bạn có 1 đơn hàng mới",
             Body : "Bạn có 1 đơn hàng mới, mời bạn vào trang quản trị xác nhận đơn hàng!"
         }).then(
