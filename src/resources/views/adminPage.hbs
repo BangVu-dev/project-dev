@@ -199,10 +199,10 @@
   
     </div>
        </div>
-        <table  id="tbl_exporttable_to_xls">
+        <table id="tbl_exporttable_to_xls">
             <thead>
                 <tr>
-                     <th>Tên khách hàng</th>
+                    <th>Tên khách hàng</th>
                     <th>Giới tính</th>
                     <th>Email</th>
                     <th>Số điện thoại</th>
@@ -222,14 +222,12 @@
                     <td>{{this.gender}}</td>
                     <td>{{this.email}}</td>
                     <td>{{this.phoneNumber}}</td>
-                    <td>{{this.address}}</td>
-                    
-                    <td id="datez"style="
-                            text-transform: capitalize;
-                        ">{{moment this.createdAt lang="Vi" format=" DD MMMM YYYY HH:mm:ss ZZ"}}
+                    <td>{{this.address}}</td>                    
+                    <td id="datez"style="text-transform: capitalize;">
+                        {{moment this.createdAt lang="Vi" format=" DD MMMM YYYY HH:mm:ss ZZ"}}
                     </td>
                     <td>{{this.quantity}}</td>
-                    <td>{{this.payMethod}}</td>                             
+                    <td>{{this.payMethod}}</td>
                     <td>
                         <form class= "btn1"name="update-don-hang-form" method="POST">
                             {{#if status}}
@@ -261,30 +259,28 @@
 </body>
 <script>
     function makeid(length) {
-    var result           = '';
-    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    var charactersLength = characters.length;
-    for ( var i = 0; i < length; i++ ) {
-      result += characters.charAt(Math.floor(Math.random() * 
- charactersLength));
-   }
-   return result;
-}
- function ExportToExcel(type, fn, dl) {
-            var elt = document.getElementById('tbl_exporttable_to_xls');
-            var wb = XLSX.utils.table_to_book(elt, { sheet: "sheet1" });
-            return dl ?
-                XLSX.write(wb, { bookType: type, bookSST: true, type: 'base64' }) :
-                XLSX.writeFile(wb, fn || (`ExcelWAVEEX ${makeid(1)}.`+ (type || 'xlsx')));
+        var result = '';
+        var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        var charactersLength = characters.length;
+        for ( var i = 0; i < length; i++ ) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
         }
+        return result;
+    }
+    function ExportToExcel(type, fn, dl) {
+        var elt = document.getElementById('tbl_exporttable_to_xls');
+        var wb = XLSX.utils.table_to_book(elt, { sheet: "sheet1" });
+        return dl ?
+        XLSX.write(wb, { bookType: type, bookSST: true, type: 'base64' }) :
+        XLSX.writeFile(wb, fn || (`ExcelWAVEEX ${makeid(1)}.`+ (type || 'xlsx')));
+    }
 
-  let tong = 29;
+  let tong = 0;
    let gia = 998000;
    let tienTuThien = 20000;
     let check = 0;
    let checked =0;
-   {{#each khachhangs
-}}
+   {{#each khachhangs}}
        {{#if status}}
         check++
         {{else}}
