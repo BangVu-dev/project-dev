@@ -224,7 +224,7 @@
                     <td>{{this.phoneNumber}}</td>
                     <td>{{this.address}}</td>                    
                     <td id="datez"style="text-transform: capitalize;">                    
-                        {{moment this.createdAt lang="Vi" format=" DD/MM/YYYY HH:mm:ss"}}
+                        {{moment this.createdAt locale format=" DD/MM/YYYY HH:mm:ss"}}
                     </td>
                     <td>{{this.quantity}}</td>
                     <td>{{this.payMethod}}</td>
@@ -300,7 +300,6 @@
     document.querySelector('#tien-quy').innerHTML = `${(tong * tienTuThien).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")} đ `;
     document.querySelector('#doanh-thu').innerHTML = `${(tong * gia).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")} đ`;
     document.querySelector('#doanh-thu-thuc').innerHTML = `${((tong * gia)-(tong * 20000)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}đ`
-    
 
     document.addEventListener('DOMContentLoaded', function () {
         let confirmBtns = document.querySelectorAll('#btn-xac-nhan');

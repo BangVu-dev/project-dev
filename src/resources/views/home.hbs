@@ -684,12 +684,7 @@
         {{/if}}
     {{/each}}
 
-    document.querySelector('#so-luong-chip').innerHTML = tong;    
-    {{!-- let digits = tong.toString().split('');    
-    var realDigits = digits.map(String)
-    for(let i =0 ;i<realDigits.length;i++){
-    document.querySelector('#so-luong-chip').innerHTML +=`<span style="--i:${i}">${realDigits[i]}</span>`          
-    } --}}
+    document.querySelector('#so-luong-chip').innerHTML = tong;
 
     let tien =(tong * tienTuThien).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
     let digits = tien.toString().split('');    
