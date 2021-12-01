@@ -1,5 +1,3 @@
-const Course = require('../models/Course');
-const Product = require('../models/Product');
 const KhachHang = require('../models/KhachHang');
 
 const { mutipleMongooseToObject } = require('../../util/mongoose');

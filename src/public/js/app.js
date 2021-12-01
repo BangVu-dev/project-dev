@@ -64,30 +64,6 @@ $(document).ready(function () {
   });
 });
 
-function popupclose() {
-  let modalCamOn = document.querySelector(".popupThuCamOn");
-  modalCamOn.style.display = "none";
-}
-
-function onBlurPopup() {
-  let modalCamOn = document.querySelector(".popupThuCamOn");
-  modalCamOn.style.display = "none"
-}
-
-
-function popupCamOn() {
-  let modal = document.querySelector(".popup");
-  let modalCamOn = document.querySelector(".popupThuCamOn");
-
-  let closeBtn1 = document.querySelector(".close-btn1");
-  modalCamOn.style.display = "block";
-  modalCamOn.style.transition = "2s";
-
-  modal.style.display = "none"
-  closeBtn1.onclick = function () {
-    modalCamOn.style.display = "none";
-  }
-}
 
 function popupclose() {
   let modalCamOn = document.querySelector(".popupThuCamOn");
@@ -167,6 +143,7 @@ $(document).ready(function () {
     }
   }
 
+  // get user gender
   if (getParameterByName('gender') === 'Nam') {
     document.querySelector('#gioi-tinh').innerHTML = 'anh';
     Array.from(gioiTinh2).forEach(gender => {

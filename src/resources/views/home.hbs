@@ -33,7 +33,7 @@
         <div class="container">
             <h1 class="title-container">Đăng ký đặt hàng ngay!</h1>
             <div class="form_dat_hang">
-                <form id="form-validate" name="add-info-form" method="POST" onsubmit="sendMail()">
+                <form action="/" id="form-validate" name="add-info-form" method="POST" onsubmit="sendMail()">
                     <div class="form-control form-group">
                         <input type="text" id="ho_ten" placeholder="Họ tên" name="name" required/>
                         <span class="form-message"></span>
@@ -696,13 +696,13 @@
     var realDigits = digits.map(String)
     console.log(realDigits)
     for(let i =0 ;i<realDigits.length;i++){
-    document.querySelector('#tien-quyen-gop').innerHTML +=`<span style="--i:${i}">${realDigits[i]}</span>`          
+        document.querySelector('#tien-quyen-gop').innerHTML +=`<span style="--i:${i}">${realDigits[i]}</span>`          
     }    
 </script>
 
 <script>
 
-    function sendMail() {
+    {{!-- function sendMail() {
         Email.send({
             Host : "smtp.gmail.com",
             Username : "tunguyen2022002@gmail.com",
@@ -714,7 +714,7 @@
         }).then(
             message => console.log(message)
         );
-    }
+    } --}}
 
 </script>
 

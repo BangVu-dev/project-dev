@@ -9,8 +9,8 @@ var session = require('express-session');
 var mongoose = require('mongoose');
 var MongoStore = require('connect-mongo')(session);
 const route = require('./routes');
-var MomentHandler = require("handlebars.moment");
 var Handlebars = require("handlebars");
+var MomentHandler = require("handlebars.moment");
 MomentHandler.registerHelpers(Handlebars);
 
 // Connect to DB
