@@ -1,20 +1,17 @@
 const express = require('express');
-const path = require('path');
+var path = require('path');
 const methodOverride = require('method-override');
 const handlebars = require('express-handlebars');
 const app = express();
 const port = 3000;
-const bodyParser = require('body-parser');
-const session = require('express-session');
-const mongoose = require('mongoose');
-const MongoStore = require('connect-mongo')(session);
+var bodyParser = require('body-parser');
+var session = require('express-session');
+var mongoose = require('mongoose');
+var MongoStore = require('connect-mongo')(session);
 const route = require('./routes');
-const Handlebars = require("handlebars");
-const MomentHandler = require("handlebars.moment");
+var Handlebars = require("handlebars");
+var MomentHandler = require("handlebars.moment");
 MomentHandler.registerHelpers(Handlebars);
-const moment = require('moment-timezone');
-moment().tz("UTC").format();
-moment().tz("Asia/Bangkok").format();
 
 // Connect to DB
 mongoose.connect('mongodb+srv://admin:0782673677@cluster0.e9zkk.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
