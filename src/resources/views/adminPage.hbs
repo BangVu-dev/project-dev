@@ -223,9 +223,10 @@
                     <td>{{this.email}}</td>
                     <td>{{this.phoneNumber}}</td>
                     <td>{{this.address}}</td>                    
-                    <td id="datez"style="text-transform: capitalize;">                    
+                    {{!-- <td id="datez"style="text-transform: capitalize;">                    
                         {{moment this.createdAt UTC="+07:00" locale="Vi" format=" DD MMMM YYYY HH:mm:ss"}}
-                    </td>
+                    </td> --}}
+                    <td>{{this.createdAt}}</td>
                     <td>{{this.quantity}}</td>
                     <td>{{this.payMethod}}</td>
                     <td>
