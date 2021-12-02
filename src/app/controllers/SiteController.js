@@ -19,14 +19,18 @@ class SiteController {
     }
 
     addData(req, res, next) {
-
         const khachhang = new KhachHang(req.body);
-        khachhang.save()
+        if (!req.body.name || !req.body.gender || !req.body.email || !req.body.address || !req.body.phoneNumber
+            || !req.body.quantity || !req.body.payMethod) {
+            res.redirect('back');
+        } else {
+            khachhang.save()
             .then(() => res.redirect(`/?thanks=true&payol=${req.body.payMethod}&gender=${req.body.gender}&name=${req.body.name}`))
             .catch(next);
+        }
 
     }
-   
+
 }
 
 module.exports = new SiteController();
